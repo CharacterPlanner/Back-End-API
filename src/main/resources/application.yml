@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  datasource:
+    #    url: jdbc:h2:file:~/test
+    #    driverClassName: org.h2.Driver
+    #    data: classpath:test-setup.sql #test-setup.sql can be put in resources folder
+
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
