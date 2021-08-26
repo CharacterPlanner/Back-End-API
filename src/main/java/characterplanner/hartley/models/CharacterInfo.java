@@ -19,10 +19,10 @@ public class CharacterInfo {
     @Column(name = "character_id")
     private int characterId;
 
-    @Column(name = "name", unique = true)
+    @Column(name = "character_name", unique = true)
     private String characterName;
 
-    @Column(name = "class")
+    @Column(name = "character_class")
     private String characterClass;
 
     @Nullable

@@ -11,7 +11,7 @@ public class CharacterService {
     @Autowired
     private CharacterRepository characterRepository;
 
-    public CharacterInfo getCharacterByName(String name) { return characterRepository.getCharacterByName(name); }
+    public CharacterInfo getCharacterByCharacterName(String name) { return characterRepository.getCharacterByCharacterName(name); }
 
     public CharacterInfo createNewCharacter(CharacterInfo character) { return characterRepository.save(character); }
 }

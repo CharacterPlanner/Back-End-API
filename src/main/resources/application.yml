@@ -9,7 +9,7 @@ management:
 
 spring:
   datasource:
-    url: jdbc:postgresql://database-1.c6wf1vlzemt0.us-west-1.rds.amazonaws.com:5432/postgres?currentSchema=CharacterPlanner
+    url: jdbc:postgresql://database-1.cn2bloewwptn.us-west-1.rds.amazonaws.com:5432/postgres
     username: mhartley
     password: Meh030688
   jpa:
@@ -17,6 +17,7 @@ spring:
     generate-ddl: true
     properties:
       hibernate:
+        globally_quoted_indetifiers: true
         jdbc:
           lob:
             non_contextual_creation: true

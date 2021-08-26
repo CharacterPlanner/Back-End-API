@@ -16,7 +16,7 @@ public class CharacterController {
 
     @GetMapping(produces = "application/json")
     public ResponseEntity<CharacterInfo> getCharacter(@RequestParam(value = "name", required = true)String name) {
-        CharacterInfo characterInfo = characterService.getCharacterByName(name);
+        CharacterInfo characterInfo = characterService.getCharacterByCharacterName(name);
         HttpStatus status = HttpStatus.OK;
         return new ResponseEntity<>(characterInfo, status);
     }
