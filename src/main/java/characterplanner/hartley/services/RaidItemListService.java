@@ -13,7 +13,7 @@ public class RaidItemListService {
     @Autowired
     private RaidItemListRepository raidItemListRepository;
 
-    public List<RaidItemList> getItemListbyRaidId(int id) { return raidItemListRepository.getItemListByRaidId(id); }
+    public List<RaidItemList> getItemListByRaidId(int id) { return raidItemListRepository.getItemListByRaidId(id); }
 
     public RaidItemList getItemByName(String name) { return raidItemListRepository.getItemByName(name); }
 }
