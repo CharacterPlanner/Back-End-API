@@ -10,14 +10,14 @@ import java.util.Objects;
 @Component
 @Entity
 @Table(name = "character_info")
-public class Character {
+public class CharacterInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "character_id")
     private int characterId;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String characterName;
 
     @Column(name = "class")
@@ -71,7 +71,7 @@ public class Character {
     @Column(name = "ranged_slot_id")
     private int rangedId;
 
-    public Character(String characterName, String characterClass, @Nullable int headId, @Nullable int shoulderId,
+    public CharacterInfo(String characterName, String characterClass, @Nullable int headId, @Nullable int shoulderId,
                      @Nullable int backId, @Nullable int chestId, @Nullable int bracerId, @Nullable int gloveId,
                      @Nullable int beltId, @Nullable int pantsId, @Nullable int bootsId, @Nullable int ringOneId,
                      @Nullable int ringTwoId, @Nullable int weaponId, @Nullable int offhandId, @Nullable int rangedId) {
@@ -274,8 +274,8 @@ public class Character {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Character character = (Character) o;
-        return characterId == character.characterId && headId == character.headId && shoulderId == character.shoulderId && backId == character.backId && chestId == character.chestId && bracerId == character.bracerId && gloveId == character.gloveId && beltId == character.beltId && pantsId == character.pantsId && bootsId == character.bootsId && ringOneId == character.ringOneId && ringTwoId == character.ringTwoId && trinketOneId == character.trinketOneId && trinketTwoId == character.trinketTwoId && weaponId == character.weaponId && offhandId == character.offhandId && rangedId == character.rangedId && Objects.equals(characterName, character.characterName) && Objects.equals(characterClass, character.characterClass);
+        CharacterInfo that = (CharacterInfo) o;
+        return characterId == that.characterId && headId == that.headId && shoulderId == that.shoulderId && backId == that.backId && chestId == that.chestId && bracerId == that.bracerId && gloveId == that.gloveId && beltId == that.beltId && pantsId == that.pantsId && bootsId == that.bootsId && ringOneId == that.ringOneId && ringTwoId == that.ringTwoId && trinketOneId == that.trinketOneId && trinketTwoId == that.trinketTwoId && weaponId == that.weaponId && offhandId == that.offhandId && rangedId == that.rangedId && Objects.equals(characterName, that.characterName) && Objects.equals(characterClass, that.characterClass);
     }
 
     @Override

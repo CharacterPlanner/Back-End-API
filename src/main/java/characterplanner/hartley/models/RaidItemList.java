@@ -15,8 +15,7 @@ public class RaidItemList {
     @Column(name = "item_id")
     private int itemId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "raid_id", nullable = false)
+    @Column(name = "raid_id", nullable = false)
     private int raidId;
 
     @Column(name = "item_name")
