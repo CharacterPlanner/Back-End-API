@@ -2,7 +2,6 @@ package web.support.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.micrometer.core.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;

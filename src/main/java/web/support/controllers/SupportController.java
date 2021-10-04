@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/character")
+@RequestMapping("/support")
 public class SupportController {
     @Autowired
     SupportService supportService;
 
-    @GetMapping(value = "/{characterName}")
+    @GetMapping(value = "/all")
     public ResponseEntity<SupportInfo> getSupportInfo() {
         SupportInfo supportInfo = supportService.getSupportInfo();
         return new ResponseEntity<>(supportInfo, HttpStatus.OK);
