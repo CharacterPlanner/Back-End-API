@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/character")
 public class CharacterController {
     @Autowired
-    private CharacterService characterService;
+    CharacterService characterService;
 
-    @GetMapping(produces = "application/json")
-    public ResponseEntity<CharacterInfo> getCharacter(@RequestParam(value = "name", required = true)String name) {
+    @GetMapping(value = "/{characterName}")
+    public ResponseEntity<CharacterInfo> getCharacter(@PathVariable("characterName")String name) {
         CharacterInfo characterInfo = characterService.getCharacterByCharacterName(name);
-        HttpStatus status = HttpStatus.OK;
-        return new ResponseEntity<>(characterInfo, status);
+        return new ResponseEntity<>(characterInfo, HttpStatus.OK);
     }
 }
