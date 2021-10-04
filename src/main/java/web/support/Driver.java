@@ -1,4 +1,4 @@
-package characterplanner.hartley;
+package web.support;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +18,7 @@ public class Driver {
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("characterplanner.hartley.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("web.support.controllers"))
                 .paths(PathSelectors.any())
                 .build();
     }
