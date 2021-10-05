@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/support")
@@ -14,9 +16,9 @@ public class SupportController {
     @Autowired
     SupportService supportService;
 
-    @GetMapping(value = "/all")
-    public ResponseEntity<SupportInfo> getSupportInfo() {
-        SupportInfo supportInfo = supportService.getSupportInfo();
+    @GetMapping(produces = "application/json")
+    public ResponseEntity<List<SupportInfo>> getSupportInfo() {
+        List<SupportInfo> supportInfo = supportService.getSupport();
         return new ResponseEntity<>(supportInfo, HttpStatus.OK);
     }
 }
